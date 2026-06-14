@@ -42,7 +42,7 @@ export default function Analytics() {
   return (
     <div>
       <h3 style={{ marginBottom: 24 }}>Analytics Dashboard</h3>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: 24 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: 24 }}>
         <div className="glass chart-card wide">
           <h3>Strength Progress</h3>
           {bestBench.length ? (

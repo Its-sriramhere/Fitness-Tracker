@@ -659,22 +659,326 @@ input[type="checkbox"] {
   left: var(--sidebar-width);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .view-container {
-    padding: 20px;
-  }
-  .section-title {
-    font-size: 1.6rem;
-  }
-}
+/* ========== RESPONSIVE / MOBILE ========== */
 
-@media (max-width: 480px) {
+/* Mobile sidebar: full-width overlay */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 100vw;
+    --header-height: 56px;
+  }
+
+  .sidebar-toggle {
+    display: none !important;
+  }
+
   .view-container {
     padding: 16px;
   }
+
+  .page-title {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 28px;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-top: -20px;
+    margin-bottom: 28px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
   .stat-card .stat-value {
     font-size: 1.5rem;
+  }
+
+  .stat-card .stat-label {
+    font-size: 0.78rem;
+  }
+
+  .chart-card {
+    padding: 16px;
+  }
+
+  .chart-card canvas {
+    max-height: 180px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .nutri-goal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .nutri-ai-input {
+    flex-direction: column;
+  }
+
+  .app-layout .main-area header {
+    padding: 8px 16px !important;
+    gap: 10px !important;
+  }
+
+  .app-layout .main-area header > div:last-child {
+    font-size: 0.75rem !important;
+  }
+
+  /* View headers stack on mobile */
+  .view-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .view-header h3 {
+    font-size: 1rem;
+  }
+
+  /* Empty state */
+  .empty-state {
+    padding: 40px 20px;
+  }
+
+  /* Nutrition */
+  .nutri-food-row {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .nutri-food-macros {
+    margin: 0 8px;
+  }
+
+  /* Landing Page mobile */
+  #landing-page header {
+    padding: 12px 16px !important;
+  }
+
+  #landing-page header .hamburger {
+    display: flex !important;
+  }
+
+  #landing-page header nav {
+    display: none !important;
+  }
+
+  #landing-page header nav.mobile-open {
+    display: flex !important;
+  }
+
+  #landing-page header > div:last-of-type .btn {
+    padding: 6px 14px !important;
+    font-size: 0.8rem !important;
+  }
+
+  #landing-page section:first-of-type {
+    flex-direction: column !important;
+    padding: 100px 20px 60px !important;
+    gap: 40px !important;
+    text-align: center;
+  }
+
+  #landing-page section:first-of-type > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #landing-page section:first-of-type > div:first-child p {
+    max-width: 100% !important;
+  }
+
+  #landing-page section:first-of-type > div:first-child > div:last-child {
+    justify-content: center;
+    gap: 32px !important;
+  }
+
+  #landing-page section:first-of-type > div:last-child {
+    flex: 0 0 auto !important;
+    max-width: 280px;
+  }
+
+  #landing-page .hero-actions {
+    justify-content: center;
+  }
+
+  #landing-page section {
+    padding: 60px 20px !important;
+  }
+
+  #landing-page .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #landing-page .categories-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  #landing-page .about-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #landing-page .testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .view-container {
+    padding: 12px;
+  }
+
+  .stat-card .stat-value {
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  #landing-page section:first-of-type {
+    padding: 90px 16px 40px !important;
+  }
+
+  #landing-page section:first-of-type > div:last-child {
+    max-width: 220px;
+  }
+
+  #landing-page section {
+    padding: 40px 16px !important;
+  }
+
+  #landing-page .categories-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  #landing-page header {
+    padding: 10px 12px !important;
+  }
+
+  #landing-page header .btn {
+    padding: 6px 14px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .btn-lg {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .sidebar {
+    overflow-y: auto;
+  }
+
+  .sidebar nav {
+    padding: 8px !important;
+  }
+
+  .sidebar nav button {
+    padding: 6px 12px !important;
+    font-size: 0.82rem !important;
+  }
+
+  .sidebar > div:first-child {
+    padding: 12px 16px 8px !important;
+  }
+
+  .sidebar > div:first-child > div {
+    font-size: 1.2rem !important;
+  }
+
+  .sidebar > div:nth-child(2) {
+    padding: 10px 16px !important;
+  }
+}
+
+/* Touch optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn:hover {
+    transform: none;
+  }
+
+  .stat-card:hover {
+    transform: none;
+  }
+
+  .btn {
+    min-height: 44px;
+  }
+
+  .btn-sm {
+    min-height: 36px;
+  }
+
+  input, select, textarea {
+    font-size: 16px; /* prevent iOS zoom on focus */
+  }
+
+  .nutri-food-del {
+    padding: 8px 12px;
+  }
+
+  .sidebar nav button {
+    min-height: 44px;
+    padding: 12px 16px !important;
+  }
+
+  .sidebar-toggle {
+    min-height: 48px;
+  }
+
+  .toggle-switch {
+    width: 48px;
+    height: 28px;
+  }
+
+  .toggle-switch::after {
+    width: 22px;
+    height: 22px;
+  }
+
+  input[type="checkbox"]:checked + .toggle-switch::after {
+    left: 26px;
+  }
+}
+
+/* Prevent horizontal scroll on all devices */
+img, svg, canvas, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Safe area support for modern mobile */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .sidebar {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .app-layout .main-area header {
+    padding-top: calc(12px + env(safe-area-inset-top)) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  @supports (padding: env(safe-area-inset-bottom)) {
+    .app-layout .main-area header {
+      padding-top: calc(8px + env(safe-area-inset-top)) !important;
+    }
   }
 }
 

@@ -48,7 +48,7 @@ export default function Progress() {
   return (
     <div>
       <h3 style={{ marginBottom: 24 }}>Your Progress</h3>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: 24 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: 24 }}>
         <div className="glass chart-card">
           <h3>Weight Log</h3>
           <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>

@@ -111,7 +111,7 @@ export default function LandingPage({ onGetStarted, onLogin }) {
     <div id="landing-page">
       <header style={styles.header}>
         <div style={styles.logo}><IconLogo /> BIFIT</div>
-        <nav style={{ ...styles.nav, ...(mobileOpen ? { display: 'flex', flexDirection: 'column', position: 'absolute', top: '60px', left: 0, right: 0, background: 'var(--bg-primary)', padding: '20px', borderBottom: '1px solid var(--border)' } : {}) }}>
+        <nav className={mobileOpen ? 'mobile-open' : ''} style={{ ...styles.nav, ...(mobileOpen ? { display: 'flex', flexDirection: 'column', position: 'absolute', top: '60px', left: 0, right: 0, background: 'var(--bg-primary)', padding: '20px', borderBottom: '1px solid var(--border)' } : {}) }}>
           <button style={styles.navLink} onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}>Features</button>
           <button style={styles.navLink} onClick={() => document.getElementById('categories')?.scrollIntoView({ behavior: 'smooth' })}>Categories</button>
           <button style={styles.navLink} onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>About</button>
@@ -133,7 +133,7 @@ export default function LandingPage({ onGetStarted, onLogin }) {
             <span className="accent-text">Limits</span> with Us
           </h1>
           <p style={styles.heroP}>Premium fitness tracking engineered for strength, performance, and results. Every rep, every set, every drop of sweat counts.</p>
-          <div style={styles.heroActions}>
+          <div className="hero-actions" style={styles.heroActions}>
             <button className="btn btn-primary btn-lg" onClick={onGetStarted}>
               Start Free Trial <IconArrowRight />
             </button>
@@ -155,7 +155,7 @@ export default function LandingPage({ onGetStarted, onLogin }) {
       <section id="features" style={styles.section}>
         <h2 className="section-title">Everything You Need</h2>
         <p className="section-subtitle">Premium tools for the dedicated athlete</p>
-        <div style={styles.featuresGrid}>
+          <div className="features-grid" style={styles.featuresGrid}>
           {[
             { icon: IconPlanner, title: 'Workout Planner', desc: 'Design custom workouts with our extensive exercise library.' },
             { icon: IconTracking, title: 'Live Tracking', desc: 'Track sets, reps, and rest timers in real-time.' },
@@ -176,7 +176,7 @@ export default function LandingPage({ onGetStarted, onLogin }) {
       <section id="categories" style={styles.section}>
         <h2 className="section-title">Training Categories</h2>
         <p className="section-subtitle">Specialized programs for every discipline</p>
-        <div style={styles.catGrid}>
+          <div className="categories-grid" style={styles.catGrid}>
           {Object.entries(catColors).map(([name, color]) => {
             const CatIcon = catIcons[name]
             return (
@@ -196,7 +196,7 @@ export default function LandingPage({ onGetStarted, onLogin }) {
       <section id="about" style={styles.aboutSection}>
         <h2 className="section-title">Built for <span className="accent-text">Performance</span></h2>
         <p className="section-subtitle">Every feature designed to help you push harder, recover smarter, and track every victory</p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px', maxWidth: 900, margin: '0 auto' }}>
+        <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px', maxWidth: 900, margin: '0 auto' }}>
           {[
             { val: '99.9%', label: 'Uptime' },
             { val: '15+', label: 'Exercise Categories' },
@@ -212,7 +212,7 @@ export default function LandingPage({ onGetStarted, onLogin }) {
 
       <section style={{ ...styles.section, paddingTop: 0 }}>
         <h2 className="section-title">What Our Athletes Say</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+        <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
           {[
             { text: "Best fitness tracker I've used. The analytics are incredible.", author: 'Alex R.' },
             { text: 'The Tabata timer alone is worth it. Clean UI, great experience.', author: 'Jamie L.' },

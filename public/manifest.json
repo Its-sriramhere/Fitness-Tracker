@@ -1,0 +1,18 @@
+{
+  "name": "BIFIT - Premium Fitness Tracking",
+  "short_name": "BIFIT",
+  "description": "Premium fitness tracking engineered for strength, performance, and results.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0E0605",
+  "theme_color": "#0E0605",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -272,11 +272,12 @@ export default function TodaysWorkout() {
                 {openDay === day.index && (
                   <>
                     <div style={{
-                      position: 'fixed', inset: 0, zIndex: 98, background: 'transparent'
+                      position: 'fixed', inset: 0, zIndex: 98, background: 'rgba(0,0,0,0.5)'
                     }} onClick={() => setOpenDay(null)} />
                     <div style={{
-                      position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)',
-                      zIndex: 99, marginTop: 6, minWidth: 220, maxHeight: 340, overflowY: 'auto',
+                      position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+                      zIndex: 99, minWidth: 280, maxWidth: 'calc(100vw - 32px)',
+                      maxHeight: 'calc(100vh - 80px)', overflowY: 'auto',
                       background: 'var(--bg-card)', border: '1px solid var(--border)',
                       borderRadius: 10, boxShadow: 'var(--shadow-lg)',
                       animation: 'modalIn 0.2s ease',
@@ -355,7 +356,7 @@ export default function TodaysWorkout() {
         <>
           {!started ? (
             <div style={{ textAlign: 'center', padding: '40px 20px', marginBottom: 20 }}>
-              <div className="glass" style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: 16, padding: '32px 48px' }}>
+              <div className="glass" style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: 16, padding: 'clamp(20px, 4vw, 32px) clamp(20px, 6vw, 48px)', maxWidth: '100%' }}>
                 <h3 style={{ fontSize: '1.2rem' }}>{workout.name}</h3>
                 <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                   {workout.exercises.length} exercises · {totalSets} sets
@@ -418,9 +419,9 @@ export default function TodaysWorkout() {
 
       {restActive && (
         <div style={{ position: 'fixed', inset: 0, zIndex: 100, background: 'rgba(0,0,0,0.7)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div className="glass" style={{ textAlign: 'center', padding: '40px 60px', animation: 'modalIn 0.3s ease' }}>
+          <div className="glass" style={{ textAlign: 'center', padding: 'clamp(24px, 5vw, 40px) clamp(20px, 6vw, 60px)', animation: 'modalIn 0.3s ease' }}>
             <h3 style={{ marginBottom: 8 }}>Rest Timer</h3>
-            <div style={{ fontSize: '4rem', fontWeight: 800, margin: '20px 0', color: 'var(--accent)', fontVariantNumeric: 'tabular-nums' }}>{formatMMSS(restSeconds)}</div>
+            <div style={{ fontSize: 'clamp(2.5rem, 10vw, 4rem)', fontWeight: 800, margin: '20px 0', color: 'var(--accent)', fontVariantNumeric: 'tabular-nums' }}>{formatMMSS(restSeconds)}</div>
             <div style={{ color: 'var(--text-secondary)', marginBottom: 16, fontSize: '0.95rem' }}>Next: <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>{restNext}</span></div>
             <button className="btn btn-primary" onClick={skipRest}>Skip Rest</button>
           </div>
